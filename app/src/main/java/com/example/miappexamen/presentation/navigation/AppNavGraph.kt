@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.ui.Modifier
 import com.example.miappexamen.presentation.permissions.GalleryPermissionsScreen
+import com.example.miappexamen.presentation.realtime.FirestoreRealtimeScreen
 
 @Composable
 fun AppNavGraph(){
@@ -45,6 +46,12 @@ fun AppNavGraph(){
         composable("permissions") {
             DrawerScaffold(navController) {
                 GalleryPermissionsScreen()
+            }
+        }
+
+        composable("realtime") {
+            DrawerScaffold(navController) {
+                FirestoreRealtimeScreen()
             }
         }
     }
