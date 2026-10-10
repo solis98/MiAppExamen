@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "519334089238",
+    "project_id": "miappexamen-3fdac",
+    "storage_bucket": "miappexamen-3fdac.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519334089238:android:8e143267333fb067235b37",
+        "android_client_info": {
+          "package_name": "com.example.miappexamen"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNmBMyMZBOhNfDhoo1Z6pE-wwXztcDd0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

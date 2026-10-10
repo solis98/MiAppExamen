@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.miappexamen.presentation.auth.LoginScreen
 import com.example.miappexamen.presentation.auth.RegisterScreen
+import com.example.miappexamen.presentation.home.HomeScreen
 
 @Composable
 fun AppNavGraph(){
@@ -21,6 +22,10 @@ fun AppNavGraph(){
 
         composable("register"){
             RegisterScreen(navController)
+        }
+
+        composable("home") {
+            HomeScreen()
         }
     }
 }
