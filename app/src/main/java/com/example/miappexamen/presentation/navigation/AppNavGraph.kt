@@ -10,6 +10,7 @@ import com.example.miappexamen.presentation.home.HomeScreen
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.ui.Modifier
+import com.example.miappexamen.presentation.permissions.GalleryPermissionsScreen
 
 @Composable
 fun AppNavGraph(){
@@ -38,6 +39,12 @@ fun AppNavGraph(){
         composable("home") {
             DrawerScaffold(navController) {
                 HomeScreen()
+            }
+        }
+
+        composable("permissions") {
+            DrawerScaffold(navController) {
+                GalleryPermissionsScreen()
             }
         }
     }

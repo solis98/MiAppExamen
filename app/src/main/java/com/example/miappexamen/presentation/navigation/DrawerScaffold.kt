@@ -21,6 +21,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.miappexamen.data.remote.FirebaseAuthManager
 import kotlinx.coroutines.launch
+import androidx.compose.runtime.getValue
+import androidx.navigation.compose.currentBackStackEntryAsState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -30,6 +32,9 @@ fun DrawerScaffold(
 ) {
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
+
+    val backStackEntry by navController.currentBackStackEntryAsState()
+    val currentRoute = backStackEntry?.destination?.route
 
     ModalNavigationDrawer(
         drawerState = drawerState,
@@ -44,10 +49,34 @@ fun DrawerScaffold(
 
                 NavigationDrawerItem(
                     label = { Text("Inicio") },
-                    selected = true,
+                    selected = currentRoute == "home",
                     onClick = {
                         scope.launch {
                             drawerState.close()
+
+                            navController.navigate("home") {
+                                popUpTo("home") {
+                                    inclusive = false
+                                }
+                                launchSingleTop = true
+                            }
+                        }
+                    }
+                )
+
+                NavigationDrawerItem(
+                    label = { Text("Galería") },
+                    selected = currentRoute == "permissions",
+                    onClick = {
+                        scope.launch {
+                            drawerState.close()
+
+                            navController.navigate("permissions") {
+                                popUpTo("home") {
+                                    inclusive = false
+                                }
+                                launchSingleTop = true
+                            }
                         }
                     }
                 )
