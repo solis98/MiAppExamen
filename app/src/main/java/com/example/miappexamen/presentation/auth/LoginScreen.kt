@@ -25,9 +25,10 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
 @Composable
-fun LoginScreen(){
+fun LoginScreen(navController: NavController) {
     var email by rememberSaveable { mutableStateOf("") }
     var password by rememberSaveable { mutableStateOf("") }
     var passwordVisible by rememberSaveable { mutableStateOf(false)}
@@ -102,5 +103,15 @@ fun LoginScreen(){
             Text("Ingresar")
         }
 
+    }
+
+    TextButton(
+        onClick = {
+            navController.navigate("register"){
+                launchSingleTop = true
+            }
+        }
+    ) {
+        Text("Crear cuenta")
     }
 }

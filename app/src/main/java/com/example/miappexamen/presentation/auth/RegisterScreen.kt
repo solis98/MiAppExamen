@@ -25,10 +25,11 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
 
 @Composable
-fun RegisterScreen() {
+fun RegisterScreen(navController: NavController) {
     var fullName by rememberSaveable { mutableStateOf("") }
     var email by rememberSaveable { mutableStateOf("") }
     var dob by rememberSaveable { mutableStateOf("") }
@@ -138,6 +139,14 @@ fun RegisterScreen() {
         }
 
 
+    }
+
+    TextButton(
+        onClick = {
+            navController.popBackStack()
+        }
+    ) {
+        Text("Ya tengo cuenta")
     }
 
 }

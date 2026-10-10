@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.example.miappexamen.presentation.auth.LoginScreen
+import com.example.miappexamen.presentation.navigation.AppNavGraph
 import com.example.miappexamen.ui.theme.MiAppExamenTheme
 
 class MainActivity : ComponentActivity() {
@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
                     Box(
                         modifier = Modifier.padding(innerPadding)
                     ) {
-                        LoginScreen()
+                        AppNavGraph()
                     }
                 }
             }
